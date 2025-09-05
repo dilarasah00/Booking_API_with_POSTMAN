@@ -32,23 +32,23 @@ jobs:
           newman run collection/Negative_tests.postman_collection.json \
             -e environment/BookingApi_negativeTest.postman_environment.json \
             -d data/getBooking_with_invalid_ID.json \
-            --folder "Negative Tests/Get Booking"
+            --folder "Get booking"
       
       - name: Run Create Token in Negative Tests
         run: |
           newman run collection/Negative_tests.postman_collection.json \
             -e environment/BookingApi_negativeTest.postman_environment.json \
             -d data/token_invalid_data.json \
-            --folder "Negative Tests/Create Token"
+            --folder "Create token"
       
       - name: Run Update Booking in Negative Tests
         run: |
           newman run collection/Negative_tests.postman_collection.json \
             -e environment/BookingApi_negativeTest.postman_environment.json \
-            --folder "Negative Tests/Update Booking"
+            --folder "Update booking"
       
       - name: Run Delete Booking in Negative Tests
         run: |
           newman run collection/Negative_tests.postman_collection.json \
             -e environment/BookingApi_negativeTest.postman_environment.json \
-            --folder "Negative Tests/Delete Booking"
+            --folder "Delete Booking"
