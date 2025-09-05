@@ -45,12 +45,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}booking/{{bookingId}}",
+							"raw": "{{url}}booking/{{id}}",
 							"host": [
 								"{{url}}booking"
 							],
 							"path": [
-								"{{bookingId}}"
+								"{{id}}"
 							]
 						}
 					},
