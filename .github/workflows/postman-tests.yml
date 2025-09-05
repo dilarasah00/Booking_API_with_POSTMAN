@@ -22,17 +22,33 @@ jobs:
         run: npm install -g newman
 
       - name: Run Positive Tests
-        run: "newman run collection/Positive_tests.postman_collection.json -e environment/BookingApi_positiveTest.postman_environment.json -d data/positiveBooking_Data.json"
+        run: |
+          newman run collection/Positive_tests.postman_collection.json \
+            -e environment/BookingApi_positiveTest.postman_environment.json \
+            -d data/positiveBooking_Data.json
       
       - name: Run Get Booking in Negative Tests
-        run: "newman run collection/Negative_tests.postman_collection.json -e environment/BookingApi_negativeTest.postman_environment.json -d data/getBooking_with_invalid_ID.json --folder 'Get Booking'"
+        run: |
+          newman run collection/Negative_tests.postman_collection.json \
+            -e environment/BookingApi_negativeTest.postman_environment.json \
+            -d data/getBooking_with_invalid_ID.json \
+            --folder "Negative Tests/Get Booking"
       
       - name: Run Create Token in Negative Tests
-        run: "newman run collection/Negative_tests.postman_collection.json -e environment/BookingApi_negativeTest.postman_environment.json -d data/token_invalid_data.json --folder 'Create Token'"
+        run: |
+          newman run collection/Negative_tests.postman_collection.json \
+            -e environment/BookingApi_negativeTest.postman_environment.json \
+            -d data/token_invalid_data.json \
+            --folder "Negative Tests/Create Token"
       
-
       - name: Run Update Booking in Negative Tests
-        run: "newman run collection/Negative_tests.postman_collection.json -e environment/BookingApi_negativeTest.postman_environment.json  --folder 'Update Booking'"
+        run: |
+          newman run collection/Negative_tests.postman_collection.json \
+            -e environment/BookingApi_negativeTest.postman_environment.json \
+            --folder "Negative Tests/Update Booking"
       
       - name: Run Delete Booking in Negative Tests
-        run: "newman run collection/Negative_tests.postman_collection.json -e environment/BookingApi_negativeTest.postman_environment.json  --folder 'Delete Booking'"
+        run: |
+          newman run collection/Negative_tests.postman_collection.json \
+            -e environment/BookingApi_negativeTest.postman_environment.json \
+            --folder "Negative Tests/Delete Booking"
