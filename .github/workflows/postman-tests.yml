@@ -21,5 +21,18 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      - name: Run Postman Tests
+      - name: Run Positive Tests
         run: "newman run collection/Positive_tests.postman_collection.json -e environment/BookingApi_positiveTest.postman_environment.json -d data/positiveBooking_Data.json"
+      
+      - name: Run Get Booking in Negative Tests
+        run: "newman run collection/Negative_tests.postman_collection.json -e environment/BookingApi_negativeTest.postman_environment.json -d data/getBooking_with_invalid_ID.json --folder 'Get Booking'"
+      
+      - name: Run Create Token in Negative Tests
+        run: "newman run collection/Negative_tests.postman_collection.json -e environment/BookingApi_negativeTest.postman_environment.json -d data/token_invalid_data.json --folder 'Create Token'"
+      
+
+      - name: Run Update Booking in Negative Tests
+        run: "newman run collection/Negative_tests.postman_collection.json -e environment/BookingApi_negativeTest.postman_environment.json  --folder 'Update Booking'"
+      
+      - name: Run Delete Booking in Negative Tests
+        run: "newman run collection/Negative_tests.postman_collection.json -e environment/BookingApi_negativeTest.postman_environment.json  --folder 'Delete Booking'"

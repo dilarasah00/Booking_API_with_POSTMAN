@@ -1,0 +1,12 @@
+[
+    {
+        "case_description": "Invalid ID",
+        "id":"9999",
+        "expected_status": 404
+    },
+    {
+        "case_description": "Wrong format ID",
+        "id":"abcd***",
+        "expected_status": 404
+    }
+]

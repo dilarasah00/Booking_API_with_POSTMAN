@@ -1,0 +1,20 @@
+[
+
+    {
+      "username": "invalid_admin",
+      "password": "password123",
+      "expected_status": 401
+    }
+    ,
+    {
+      "username": "admin",
+      "password": "invalid_password",
+      "expected_status": 401
+    },
+    {
+      "username": "admin",
+      "password": "",
+      "expected_status": 400
+    }
+  ]
+  
